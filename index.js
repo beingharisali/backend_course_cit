@@ -6,6 +6,7 @@ const connectDB = require('./db/connect')
 connectDB()
 const productRouter = require('./routes/product')
 
+app.use(express.json())
 app.use('/api/v1', productRouter)
 
 app.get('/health', (req, res)=>{
