@@ -6,11 +6,13 @@ const port = process.env.PORT
 const connectDB = require('./db/connect')
 connectDB()
 const productRouter = require('./routes/product')
+const userRouter = require('./routes/users')
 
 
 app.use(cors({origin:"http://localhost:5173"}))
 app.use(express.json())
 app.use('/api/v1', productRouter)
+app.use('/api/v1/users', userRouter)
 
 app.get('/health', (req, res)=>{
     try {
