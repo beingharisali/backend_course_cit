@@ -9,7 +9,7 @@ const productRouter = require('./routes/product')
 const userRouter = require('./routes/users')
 
 
-app.use(cors({origin:"https://frontend-project-cit.vercel.app"}))
+app.use(cors({origin: process.env.FRONTEND_URL}))
 app.use(express.json())
 app.use('/api/v1', productRouter)
 app.use('/api/v1/users', userRouter)
